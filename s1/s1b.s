@@ -11,9 +11,11 @@ ff:	.half -1
 	.text
 	.globl main
 main:
-
-
-
+	
+	la $s3, aa
+	li $s4, 65535
+	li $s5, 65536
+	move $s0, $s1
 
 
 	jr $ra		# main retorna al codi de startup
