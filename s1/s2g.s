@@ -2,15 +2,16 @@
 
 	.data
 fib: 	.space 40
+
 	.text
 	.globl main
 main:
 	
-	li $s0, 2
+	li $s0, 2 #i
 	la $t1, fib
 	li $t2, 1
-	sw $zero, 0($t1)
-	sw $t2, 4($t1)
+	sw $zero, 0($t1) #fib[0] = 0
+	sw $t2, 4($t1) #fib[1] = 1
 while:
 	slti $t0, $s0, 10
 	beq $t0, $zero, fi
