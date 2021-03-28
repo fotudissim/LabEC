@@ -52,13 +52,13 @@ codifica:
    move  $s0, $a0
    move  $s1, $a1 
 while:
-   lb    $t0, 0($s0)
+   #lb    $t0, 0($s0) Instrucció no necessàrea 
    lb    $t0, 0($t0)
    beq   $t0, $zero, fi_while
    la    $a0, alfabet
-   move  $a1, $s1
+   move  $a1, $s0 #s'ha canviat s1 per s0
    jal   g  
-   sb    $v0, 0($s0)  
+   sb    $v0, 0($s1) #s'ha canviat s0 per s1  
    addiu $s0, $s0, 1
    addiu $s1, $s1, 1
    addiu $s2, $s2, 1  
