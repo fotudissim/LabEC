@@ -16,7 +16,7 @@ main:
 	la $a0, mat4
 	lw $a1, 8($a0) #(0*3+2)*4
 	la $a2, col
-	lw $s1, 0($a2)
+	lw $a2, 0($a2)
 	
 	jal subr
 	
@@ -54,7 +54,7 @@ subr:
 	sll $t1, $t1, 2
 	la $t2, mat1
 	addu $t1, $t1, $t2 #@mat1 + (j6+5)4
-	lw $t0, 0($t1)
+	sw $t0, 0($t1)
 	
 	move $v0, $a1
 	jr $ra
